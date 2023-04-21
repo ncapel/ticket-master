@@ -10,7 +10,11 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="header">Greetings Ticket-Master</h1>
+        <div class="nav">
+            <h1 id="header">Greetings Ticket-Master</h1>
+            <button class="button" onclick="nextTicket(); updateCount()" type="submit">Next Ticket</button>
+        </div>
+        <h3 id="wait-time">Wait Time: 0 minutes</h3>
         <div id="initial_input" class="initial_input">
             <p>To begin, please complete the following:</p>
             <form>
@@ -41,9 +45,6 @@
                 <ul id="waiters">
                     
                 </ul>
-            </div>
-            <div class="next">
-                <button class="button" onclick="nextTicket(); updateCount()" type="submit">Next Ticket</button>
             </div>
         </div>
     </div>
