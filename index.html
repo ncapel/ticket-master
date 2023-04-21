@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Ticket Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">Greetings Ticket-Master</h1>
+        <div id="initial_input" class="initial_input">
+            <p>To begin, please complete the following:</p>
+            <form>
+                <div>
+                    <label for="ticket_letter">Select the starting letter:</label>
+                    <select name="ticket_letter" id="ticket_letter">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="ticket_number">Enter the starting number:</label>
+                    <input type="number" name="ticket_number" id="ticket_number" min="0" max="99">
+                </div>
+            </form>
+        <button class="button" onclick="formData(); delElem('initial_input')" type="submit">Submit</button>
+        </div>
+        <div class="main-content">
+            <div class="list">
+                <ul id="waiters">
+                    
+                </ul>
+            </div>
+            <div class="next">
+                <button class="button" onclick="nextTicket(); updateCount()" type="submit">Next Ticket</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
