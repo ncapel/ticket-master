@@ -19,15 +19,23 @@ const updateCount = () => {
 }
 
 const drawTicket = () => {
+    let timestamp = new Date(); 
     const list = document.getElementById('waiters');
     const newLi = document.createElement('li');
     newLi.setAttribute('onclick', 'this.remove(); updateCount()')
-    newLi.innerHTML = (data.letter + data.num)
+    newLi.innerHTML = (data.letter + data.num + ' @ ' + timestamp.getHours() + ':' + timestamp.getMinutes() + ':' + timestamp.getSeconds());
     list.appendChild(newLi);
 }
+// A1 @ 15:36:51   position 9 and 10
 
 const delElem = (id) => {
     document.getElementById(id).remove();
+}
+
+const timer = document.querySelector('#wait-time');
+
+const showWait = () => {
+    timer.style.display = 'block';
 }
 
 const nextTicket = () => {
