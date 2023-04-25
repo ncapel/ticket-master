@@ -14,7 +14,7 @@ const formData = () => {
 
 const updateCount = () => {
     const render = document.getElementById('header');
-    let count = document.getElementsByTagName('li').length;
+    let count = document.querySelectorAll('li').length;
     render.innerHTML = (`Currently Waiting: ${count}`)
 }
 
@@ -70,7 +70,7 @@ const drawTicket = () => {
     newTimeStamp();
     const list = document.getElementById('waiters');
     const newLi = document.createElement('li');
-    newLi.setAttribute('onclick', 'updateCount(); delTime(this); getElapsedWait(); this.remove();');
+    newLi.setAttribute('onclick', 'this.remove(); updateCount(); delTime(this); getElapsedWait();');
     newLi.setAttribute('id', data.num);
     newLi.innerHTML = (data.letter + data.num + ' @ ' + timestamp);
     list.appendChild(newLi);
@@ -83,15 +83,15 @@ const delElem = (id) => {
 
 const nextTicket = () => {
     if (data.num == 99 && data.letter == data.ticketLetters[9]) {
-        drawTicket(data.num, data.letter);
+        drawTicket();
         data.num = 0;
         data.letter = data.ticketLetters[0];
     } else if (data.num == 99) {
-        drawTicket(data.num, data.letter);
+        drawTicket();
         data.num = 0;
         data.letter = data.ticketLetters[data.ticketLetters.indexOf(data.letter) + 1];
     } else {
-        drawTicket(data.num, data.letter);
+        drawTicket();
         data.num++;
     }
     return data;
