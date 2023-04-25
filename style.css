@@ -16,8 +16,8 @@
     align-items: center;
     color: white;
 }
-#wait-time {
-    margin-bottom: 10px;
+#elapsed-wait {
+    margin: 20px 0px;
 }
 .main-content {
     display: flex;
