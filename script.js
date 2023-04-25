@@ -18,24 +18,67 @@ const updateCount = () => {
     render.innerHTML = (`Currently Waiting: ${count}`)
 }
 
+let timestamp;
+
+const newTimeStamp = () => {
+    var d = new Date();
+    var hours = d.getHours();
+    var AmOrPm = hours >= 12 ? 'pm' : 'am';
+    hours = (hours % 12) || 12;
+    var mins = d.getMinutes();
+    if (mins < 10) {
+        mins = '0'+mins
+    }
+    return timestamp = `${hours}:${mins}${AmOrPm}`
+}
+
+const dispWait = document.querySelector('span');
+
+var times = [];
+
+const start = () => {
+    var startTime = new Date();
+    times.push(startTime);
+};
+
+const getElapsedWait = () => {
+    var endTime = new Date();
+    var timeDiff = ((endTime / 1000) / 60) - ((times[0] / 1000) / 60);
+    var elapsed = Math.floor(timeDiff);
+
+    if (waiters.length > 0) {
+        dispWait.innerText = elapsed;
+    } else {
+        dispWait.innerText = '0';
+    }
+}
+
+var liArr = [];
+
+const delTime = (li) => {
+    for (var i = 0; i < liArr.length; i++) {
+        if (liArr[i].id == li.id) {
+            times.splice(i, 1);
+            liArr.splice(i, 1);
+        }
+    }
+}
+
+setInterval(getElapsedWait, 5000);
+
 const drawTicket = () => {
-    let timestamp = new Date(); 
+    newTimeStamp();
     const list = document.getElementById('waiters');
     const newLi = document.createElement('li');
-    newLi.setAttribute('onclick', 'this.remove(); updateCount()')
-    newLi.innerHTML = (data.letter + data.num + ' @ ' + timestamp.getHours() + ':' + timestamp.getMinutes() + ':' + timestamp.getSeconds());
+    newLi.setAttribute('onclick', 'updateCount(); delTime(this); getElapsedWait(); this.remove();');
+    newLi.setAttribute('id', data.num);
+    newLi.innerHTML = (data.letter + data.num + ' @ ' + timestamp);
     list.appendChild(newLi);
+    liArr.push(newLi);
 }
-// A1 @ 15:36:51   position 9 and 10
 
 const delElem = (id) => {
     document.getElementById(id).remove();
-}
-
-const timer = document.querySelector('#wait-time');
-
-const showWait = () => {
-    timer.style.display = 'block';
 }
 
 const nextTicket = () => {
