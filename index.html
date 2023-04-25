@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Ticket Tracker</title>
 </head>
 <body>
     <div class="container">
         <div class="nav">
             <h1 id="header">Greetings Ticket-Master</h1>
-            <button class="button" onclick="nextTicket(); updateCount()" type="submit">Next Ticket</button>
+            <button class="button" onclick="nextTicket(); updateCount(); start()" type="submit">Next Ticket</button>
         </div>
-        <h3 id="wait-time">Wait Time: 0 minutes</h3>
+        <p id="elapsed-wait">Wait Time: <span>0</span> minutes</p>
         <div id="initial_input" class="initial_input">
             <p>To begin, please complete the following:</p>
             <form>
@@ -48,5 +47,6 @@
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
