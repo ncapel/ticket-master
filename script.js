@@ -46,6 +46,7 @@ const getElapsedWait = () => {
     var timeDiff = ((endTime / 1000) / 60) - ((times[0] / 1000) / 60);
     var elapsed = Math.floor(timeDiff);
 
+    var waiters = document.querySelectorAll('li')
     if (waiters.length > 0) {
         dispWait.innerText = elapsed;
     } else {
