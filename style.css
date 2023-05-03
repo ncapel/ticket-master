@@ -19,6 +19,9 @@
 #elapsed-wait {
     margin: 20px 0px;
 }
+#next-pt-btn {
+    display: none;
+}
 .main-content {
     display: flex;
     justify-content: space-between;
