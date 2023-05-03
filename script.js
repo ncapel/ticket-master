@@ -8,7 +8,8 @@ const data = {
 
 const formData = () => {
     data.num = document.getElementById('ticket_number').value;
-    data.letter = document.getElementById('ticket_letter').value
+    data.letter = document.getElementById('ticket_letter').value;
+    document.getElementById('next-pt-btn').style.display = 'block';
     return data;
 }
 
