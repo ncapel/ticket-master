@@ -1,7 +1,7 @@
 # Ticket Master
 This site was developed for the pharmacy technicians at the Mountain Home VAMC. This
 site takes a starting input (the next ticket in the reem) and then displays the tickets
-sequentially relative to the starting input. The display also contains a timestamp of
+sequentially, relative to the starting input. The display also contains a timestamp of
 the time the ticket was added to the queue, as well as an elapsed wait time of the oldest
 ticket.
 
