@@ -25,5 +25,5 @@ little project.
 
 This site was developed while I was working in the hallway, handing out tickets. I used these basic
 technologies because they require nothing to get started. This was important in this development because 
-government computers have very *harsh* restrictions.
+government computers have *very* harsh restrictions.
 
