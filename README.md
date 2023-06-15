@@ -19,11 +19,11 @@ issued and keep track of it on paper. This process was very tedious and I wanted
 little project.
 
 ## Technologies
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
-This site was developed while I was working in the hallway, handing out tickets. I used these basic
-technologies because they require nothing to get started. This was important in this development because 
-government computers have *very* harsh restrictions.
+This site was developed while I was working in the hallway, handing out tickets. I chose to build it from scratch
+using only the basic 3 as a challenge to myself. I wanted to see if I could build something user-friendly and functional using only what
+was available to me on my work computer. 
 
