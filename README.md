@@ -24,6 +24,6 @@ little project.
 - JavaScript
 
 This site was developed while I was working in the hallway, handing out tickets. I chose to build it from scratch
-using only the basic 3 as a challenge to myself. I wanted to see if I could build something user-friendly and functional using only what
+using these three technologies as a challenge to myself. I wanted to see if I could build something user-friendly and functional using only what
 was available to me on my work computer. 
 
