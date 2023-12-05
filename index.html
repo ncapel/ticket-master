@@ -4,49 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Ticket Master</title>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
-            <h1 id="header">Greetings Ticket-Master</h1>
-            <button class="button" id="next-pt-btn" onclick="nextTicket(); updateCount(); start()" type="submit">Next Ticket</button>
-        </div>
-        <p id="elapsed-wait">Wait Time: <span>0</span> minutes</p>
-        <div id="initial_input" class="initial_input">
-            <p>To begin, please complete the following:</p>
-            <form>
-                <div>
-                    <label for="ticket_letter">Select the starting letter:</label>
-                    <select name="ticket_letter" id="ticket_letter">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                        <option value="G">G</option>
-                        <option value="H">H</option>
-                        <option value="I">I</option>
-                        <option value="J">J</option>
-                    </select>
+        <nav class="navbar text-light bg-dark w-100 px-2">
+            <div class="container">
+                <h1 class="navbar-brand text-light" id="header">Greetings Ticket-Master</h1>
+                <p id="elapsed-wait">Wait Time: <span>0</span> minutes</p>
+                <button class="btn btn-primary" id="next-pt-btn" onclick="nextTicket(); updateCount(); start()" type="submit">Next Ticket</button>
+            </div>
+        </nav>
+        <div class="container mt-4">
+            <div id="initial_input" class="initial_input">
+                <p>To begin, please complete the following:</p>
+                <form>
+                    <div class="form-group">
+                        <label for="ticket_letter">Select the starting letter:</label>
+                        <div class="col-1 mb-3">
+                            <select class="form-control w-50" name="ticket_letter" id="ticket_letter">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="G">G</option>
+                                <option value="H">H</option>
+                                <option value="I">I</option>
+                                <option value="J">J</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <label for="ticket_number">Enter the starting number:</label>
+                        <input class="form-control w-50" type="number" name="ticket_number" id="ticket_number" min="0" max="99">
+                    </div>
+                </form>
+            <button class="btn btn-primary" onclick="formData(); delElem('initial_input')" type="submit">Submit</button>
+            </div>
+            <div class="main-content mt-3">
+                <div class="col-3 text-center">
+                    <ul class="list-group" id="waiters">
+                        <!-- JS populates this -->
+                    </ul>
                 </div>
-                <div>
-                    <label for="ticket_number">Enter the starting number:</label>
-                    <input type="number" name="ticket_number" id="ticket_number" min="0" max="99">
-                </div>
-            </form>
-        <button class="button" onclick="formData(); delElem('initial_input')" type="submit">Submit</button>
-        </div>
-        <div class="main-content">
-            <div class="list">
-                <ul id="waiters">
-                    
-                </ul>
             </div>
         </div>
-    </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
 </html>

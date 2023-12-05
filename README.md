@@ -21,9 +21,10 @@ little project.
 ## Technologies
 - HTML5
 - CSS3
+- Bootstrap
 - JavaScript
 
 This site was developed while I was working in the hallway, handing out tickets. I chose to build it from scratch
 using these three technologies as a challenge to myself. I wanted to see if I could build something user-friendly and functional using only what
-was available to me on my work computer. 
+was available to me on my work computer.
 
